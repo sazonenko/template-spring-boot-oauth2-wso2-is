@@ -4,16 +4,16 @@
 security:
   oauth2:
     client:
-      accessTokenUri: https://localhost:9444/oauth2/token
-      userAuthorizationUri: https://localhost:9444/oauth2/authorize
-      clientId: LXphgIFoHC5qltrSrYzGwoGUs90a
-      clientSecret: j6TlbQ3UXvONmIZMVql5fuaTN_Ua
+      accessTokenUri: https://localhost:9443/oauth2/token
+      userAuthorizationUri: https://localhost:9443/oauth2/authorize
+      clientId: mI2YL0f9g8C0cnmE3grH_iznrIUa
+      clientSecret: xf8Qqj4xoSmN8t2uJn9MbI3cky4a
       scope: openid
       clientAuthenticationScheme: header
       preEstablishedRedirectUri: http://localhost:8080/login
       useCurrentUri: false
     resource:
-      userInfoUri: https://localhost:9444/oauth2/userinfo?schema=openid
+      userInfoUri: https://localhost:9443/oauth2/userinfo?schema=openid
 wso2SessionTerminateUrl: https://localhost:9443/commonauth?commonAuthLogout=true&type=oid&commonAuthCallerPath=http://localhost:8080/logout&relyingParty=localhost
 #######################
 # OAuth2 / OpenID END
@@ -23,4 +23,9 @@ spring:
   resources:
     chain:
       enabled: true
-      
+
+server:
+  session:
+    cookie:
+      name: MYSESSIONID
+
